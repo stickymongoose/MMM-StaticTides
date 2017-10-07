@@ -1,6 +1,6 @@
 ## MMM-StaticTides
 
-A static display of the next 8 tides. Sister module to MMM-SimpleTides, which rotates.
+A static display of the next 8 tides. Sister module to [MMM-SimpleTides](https://github.com/mykle1/MMM-SimpleTides), which rotates.
 
 ## S.O.P.
 
@@ -30,7 +30,7 @@ Annotated .css file included for position, sizing, and coloring. Default is whit
 
 * Free and immediate apiKey @ https://www.worldtides.info/developer
 
-* apiKey works in MMM-SimpleTides and MMM-StaticTides
+* apiKey works in [MMM-SimpleTides](https://github.com/mykle1/MMM-SimpleTides) and MMM-StaticTides
 
 * No dependencies! No kidding!
 
