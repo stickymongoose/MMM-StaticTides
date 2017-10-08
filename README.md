@@ -14,7 +14,7 @@ screen real estate. My hope is that they are all informative, or fun, or both.
 * High/Low tide icon indicator, day and time of tide
 * Name of the location of the tide station
 * Tide station used is the closest to your longitude and latitude
-
+* Extremely small footprint
 
 ## Examples
 
