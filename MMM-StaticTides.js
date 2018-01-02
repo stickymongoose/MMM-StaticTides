@@ -88,12 +88,12 @@ Module.register("MMM-StaticTides", {
             row.appendChild(timeCell);
 
             var heightCell = document.createElement("td");
-            heightCell.className = "small";
+            heightCell.className = "small align-right";
             heightCell.innerHTML = tides.height;
             row.appendChild(heightCell);
 
             var typeCell = document.createElement("td");
-            typeCell.className = "small";
+            typeCell.className = "small align-right";
             typeCell.innerHTML = tides.type;
             row.appendChild(typeCell);
 
