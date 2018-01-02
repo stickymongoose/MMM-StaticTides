@@ -40,7 +40,7 @@ Module.register("MMM-StaticTides", {
 
     getDom: function() {
 
-        // *DS* var tides = this.tides;
+        var tides = this.tides;
 
         var wrapper = document.createElement("div");
 /*         wrapper.className = "wrapper";
@@ -63,16 +63,9 @@ Module.register("MMM-StaticTides", {
         } */
 		 
 		 
-        var top = document.createElement("div");
+/*         var top = document.createElement("div");
         top.classList.add("list-row");
-
-		
-        // place
-        var place = document.createElement("div");
-        place.classList.add("small", "bright", "place");
-        place.innerHTML = this.station;
-        top.appendChild(place);
-
+ */		
         // DS
 
         var table = document.createElement("table");
@@ -85,117 +78,29 @@ Module.register("MMM-StaticTides", {
             table.appendChild(row);
             
             var dayCell = document.createElement("td");
-            dayCell.className = "date";
+            dayCell.className = "small";
             dayCell.innerHTML = tides.day;
             row.appendChild(dayCell);
 
             var timeCell = document.createElement("td");
-            timeCell.className = "date";
+            timeCell.className = "small";
             timeCell.innerHTML = tides.time;
             row.appendChild(timeCell);
 
             var heightCell = document.createElement("td");
-            heightCell.className = "date";
+            heightCell.className = "small";
             heightCell.innerHTML = tides.height;
             row.appendChild(heightCell);
 
             var typeCell = document.createElement("td");
-            typeCell.className = "date";
+            typeCell.className = "small";
             typeCell.innerHTML = tides.type;
             row.appendChild(typeCell);
 
         }
-        
+
         return table;
 
-
-        /* // Tide #1 = High/Low icon, day of the week, time of tide (am/pm)
-        var date = document.createElement("div");
-        date.classList.add("xsmall", "bright", "date");
-		if (tides[0].type == "Low") {
-            date.innerHTML = "<img class = img src=modules/MMM-StaticTides/images/low.png width=12% height=12%>" + " &nbsp " + moment.utc(tides[0].dt * 1000).local().format("ddd") + " &nbsp" + moment.utc(tides[0].dt * 1000).local().format("  h:mm a"); // Stackoverflow.com
-        } else {
-            date.innerHTML = "<img class = img src=modules/MMM-StaticTides/images/high.png width=12% height=12%>" + " &nbsp " + moment.utc(tides[0].dt * 1000).local().format("ddd") + " &nbsp" + moment.utc(tides[0].dt * 1000).local().format("  h:mm a"); // Stackoverflow.com
-        }
-		top.appendChild(date);
-		
-		
-		// Tide #2 = High/Low icon, day of the week, time of tide (am/pm)
-        var date2 = document.createElement("div");
-        date2.classList.add("xsmall", "bright", "date2");
-		if (tides[1].type == "Low") {
-            date2.innerHTML = "<img class = img src=modules/MMM-SimpleTides/images/low.png width=12% height=12%>" + " &nbsp " + moment.utc(tides[1].dt * 1000).local().format("ddd") + " &nbsp" + moment.utc(tides[1].dt * 1000).local().format("  h:mm a"); // Stackoverflow.com
-        } else {
-            date2.innerHTML = "<img class = img src=modules/MMM-SimpleTides/images/high.png width=12% height=12%>" + " &nbsp " + moment.utc(tides[1].dt * 1000).local().format("ddd") + " &nbsp" + moment.utc(tides[1].dt * 1000).local().format("  h:mm a"); // Stackoverflow.com
-        }
-		top.appendChild(date2);
-		
-		
-		// Tide #3 = High/Low icon, day of the week, time of tide (am/pm)
-        var date = document.createElement("div");
-        date.classList.add("xsmall", "bright", "date");
-		if (tides[2].type == "Low") {
-            date.innerHTML = "<img class = img src=modules/MMM-SimpleTides/images/low.png width=12% height=12%>" + " &nbsp " + moment.utc(tides[2].dt * 1000).local().format("ddd") + " &nbsp" + moment.utc(tides[2].dt * 1000).local().format("  h:mm a"); // Stackoverflow.com
-        } else {
-            date.innerHTML = "<img class = img src=modules/MMM-SimpleTides/images/high.png width=12% height=12%>" + " &nbsp " + moment.utc(tides[2].dt * 1000).local().format("ddd") + " &nbsp" + moment.utc(tides[2].dt * 1000).local().format("  h:mm a"); // Stackoverflow.com
-        }
-		top.appendChild(date);
-		
-		
-		// Tide #4 = High/Low icon, day of the week, time of tide (am/pm)
-        var date2 = document.createElement("div");
-        date2.classList.add("xsmall", "bright", "date2");
-		if (tides[3].type == "Low") {
-            date2.innerHTML = "<img class = img src=modules/MMM-SimpleTides/images/low.png width=12% height=12%>" + " &nbsp " + moment.utc(tides[3].dt * 1000).local().format("ddd") + " &nbsp" + moment.utc(tides[3].dt * 1000).local().format("  h:mm a"); // Stackoverflow.com
-        } else {
-            date2.innerHTML = "<img class = img src=modules/MMM-SimpleTides/images/high.png width=12% height=12%>" + " &nbsp " + moment.utc(tides[3].dt * 1000).local().format("ddd") + " &nbsp" + moment.utc(tides[3].dt * 1000).local().format("  h:mm a"); // Stackoverflow.com
-        }
-		top.appendChild(date2);
-		
-		
-		// Tide #5 = High/Low icon, day of the week, time of tide (am/pm)
-        var date = document.createElement("div");
-        date.classList.add("xsmall", "bright", "date");
-		if (tides[4].type == "Low") {
-            date.innerHTML = "<img class = img src=modules/MMM-SimpleTides/images/low.png width=12% height=12%>" + " &nbsp " + moment.utc(tides[4].dt * 1000).local().format("ddd") + " &nbsp" + moment.utc(tides[4].dt * 1000).local().format("  h:mm a"); // Stackoverflow.com
-        } else {
-            date.innerHTML = "<img class = img src=modules/MMM-SimpleTides/images/high.png width=12% height=12%>" + " &nbsp " + moment.utc(tides[4].dt * 1000).local().format("ddd") + " &nbsp" + moment.utc(tides[4].dt * 1000).local().format("  h:mm a"); // Stackoverflow.com
-        }
-		top.appendChild(date);
-		
-		
-		// Tide #6 = High/Low icon, day of the week, time of tide (am/pm)
-        var date2 = document.createElement("div");
-        date2.classList.add("xsmall", "bright", "date2");
-		if (tides[5].type == "Low") {
-            date2.innerHTML = "<img class = img src=modules/MMM-SimpleTides/images/low.png width=12% height=12%>" + " &nbsp " + moment.utc(tides[5].dt * 1000).local().format("ddd") + " &nbsp" + moment.utc(tides[5].dt * 1000).local().format("  h:mm a"); // Stackoverflow.com
-        } else {
-            date2.innerHTML = "<img class = img src=modules/MMM-SimpleTides/images/high.png width=12% height=12%>" + " &nbsp " + moment.utc(tides[5].dt * 1000).local().format("ddd") + " &nbsp" + moment.utc(tides[5].dt * 1000).local().format("  h:mm a"); // Stackoverflow.com
-        }
-		top.appendChild(date2);
-		
-		
-		// Tide #7 = High/Low icon, day of the week, time of tide (am/pm)
-        var date = document.createElement("div");
-        date.classList.add("xsmall", "bright", "date");
-		if (tides[6].type == "Low") {
-            date.innerHTML = "<img class = img src=modules/MMM-SimpleTides/images/low.png width=12% height=12%>" + " &nbsp " + moment.utc(tides[6].dt * 1000).local().format("ddd") + " &nbsp" + moment.utc(tides[6].dt * 1000).local().format("  h:mm a"); // Stackoverflow.com
-        } else {
-            date.innerHTML = "<img class = img src=modules/MMM-SimpleTides/images/high.png width=12% height=12%>" + " &nbsp " + moment.utc(tides[6].dt * 1000).local().format("ddd") + " &nbsp" + moment.utc(tides[6].dt * 1000).local().format("  h:mm a"); // Stackoverflow.com
-        }
-		top.appendChild(date);
-		
-		
-		// Tide #8 = High/Low icon, day of the week, time of tide (am/pm)
-        var date2 = document.createElement("div");
-        date2.classList.add("xsmall", "bright", "date2");
-		if (tides[7].type == "Low") {
-            date2.innerHTML = "<img class = img src=modules/MMM-SimpleTides/images/low.png width=12% height=12%>" + " &nbsp " + moment.utc(tides[7].dt * 1000).local().format("ddd") + " &nbsp" + moment.utc(tides[7].dt * 1000).local().format("  h:mm a"); // Stackoverflow.com
-        } else {
-            date2.innerHTML = "<img class = img src=modules/MMM-SimpleTides/images/high.png width=12% height=12%>" + " &nbsp " + moment.utc(tides[7].dt * 1000).local().format("ddd") + " &nbsp" + moment.utc(tides[7].dt * 1000).local().format("  h:mm a"); // Stackoverflow.com
-        }
-		top.appendChild(date2); */
-		
 /*         wrapper.appendChild(top);
 	
         return wrapper; */
@@ -211,8 +116,8 @@ Module.register("MMM-StaticTides", {
 
             var day = moment(tides.dt, "X").format("ddd");
             var time = moment(tides.dt, "X").format("hh:mm a");
-            var height = {};
-            var type = {};
+            var height = tides.height;
+            var type = tides.type;
 
             var tidesData = {
                 day: day,
@@ -222,11 +127,11 @@ Module.register("MMM-StaticTides", {
             };
             this.tides.push(tidesData)
         }
-/*         this.today = data.Today;
-        this.station = data.station; // before extremes object
+         this.today = data.Today;
+/*        this.station = data.station; // before extremes object
         this.tides = data.extremes; // Object
-        this.loaded = true; */
-    	console.log(this.tides); // for checking
+        */this.loaded = true;/* 
+    	console.log(this.tides); // for checking */
 },
 
     scheduleUpdate: function() {
