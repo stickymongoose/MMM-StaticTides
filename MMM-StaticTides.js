@@ -11,8 +11,8 @@ Module.register("MMM-StaticTides", {
         apiKey: "",                    // Free apiKey @ https://www.worldtides.info/register
         lat: "",                       // your latitude
         lon: "",                       // your longitude
-        useHeader: false,              // False if you don't want a header      
-        header: "",                    // Change in config file. useHeader must be true
+        useHeader: true,              // False if you don't want a header      
+        header: "test",                    // Change in config file. useHeader must be true
         maxWidth: "300px",
         animationSpeed: 3000,          // fade speed
         initialLoadDelay: 3250,
@@ -54,8 +54,8 @@ Module.register("MMM-StaticTides", {
             return wrapper;
         }
 
-		// header
-/*         if (this.config.useHeader != false) {
+/* 		// header
+        if (this.config.useHeader != false) {
             var header = document.createElement("header");
             header.classList.add("xsmall", "bright", "header");
             header.innerHTML = this.config.header;
@@ -100,15 +100,25 @@ Module.register("MMM-StaticTides", {
         }
 
         return table;
+    },
+
+    getHeader: function() {
+            if (this.config.appendLocationNameToHeader) {
+                return this.data.header + " " + this.station;
+            }
+    
+            return this.data.header;
+        },
 
 /*         wrapper.appendChild(top);
 	
         return wrapper; */
-    },
+    
 
 
     processTides: function(data) {
         this.tides = [];
+        var station = data.station;
         var tidesData = {}
 
         for (var i = 0, count = data.extremes.length; i < count; i++) {
